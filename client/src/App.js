@@ -14,6 +14,16 @@ class App extends React.Component{
         document.querySelector('.model-background').style.display = 'flex';
         document.querySelector('.model-window-create').style.display = 'flex'
     }
+    onClickBack=(event)=>{
+        console.log(event.target.id)
+        document.querySelector('.model-background').style.display = 'none';
+        if (event.target.id==='save'){
+            document.querySelector('.model-window-edit').style.display = 'none'
+        }
+        else {
+            document.querySelector('.model-window-create').style.display = 'none'
+        }
+    }
     onClickCreateWorker=()=>{
         const name = document.querySelector('#name-create').value;
         const surname = document.querySelector('#surname-create').value;
@@ -41,6 +51,8 @@ class App extends React.Component{
                 this.setState({persons:temp});
             })
             .catch(error => console.log('error', error));
+        document.querySelector('#name-create').value = ''
+        document.querySelector('#surname-create').value = ''
         document.querySelector('.model-window-create').style.display = 'none'
         document.querySelector('.model-background').style.display = 'none'
 
@@ -134,10 +146,12 @@ class App extends React.Component{
 
             <div className="model-background">
                 <div className="model-window model-window-edit">
-                <ModelWindowSave onClickButtonEdit={this.onClickEditWorker} />
+                <ModelWindowSave onClickBack={this.onClickBack}
+                                 onClickButtonEdit={this.onClickEditWorker} />
             </div>
             <div className="model-window model-window-create">
-                <ModelWindowCreate onClickCreateWorker={this.onClickCreateWorker}/>
+                <ModelWindowCreate onClickBack={this.onClickBack}
+                                   onClickCreateWorker={this.onClickCreateWorker}/>
             </div>
             </div>
         </div>
