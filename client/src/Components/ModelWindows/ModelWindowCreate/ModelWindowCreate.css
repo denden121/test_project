@@ -1,0 +1,48 @@
+.model-title{
+    background-color: blueviolet;
+    /*text-align: center;*/
+    padding: 10px;
+    color: white;
+}
+div{
+    margin-bottom: 20px;
+}
+
+.model-create {
+
+    /*display: flex;*/
+    text-align: center;
+    /*justify-content: center;*/
+    width: 100%;
+}
+
+.modal-form {
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+}
+
+.modal-form input {
+    height: 30px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 0 10px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.modal-form button {
+    width: 30%;
+    text-align: center;
+    justify-content: center;
+    height: 30px
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+    padding-left: 15px;
+}
